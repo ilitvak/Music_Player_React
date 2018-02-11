@@ -11,7 +11,7 @@ const VideoDetail = (props) => {
     const url = `https://youtube.com/embed/${videoId}`;
     const videoTitle = video.snippet.title;
     const videoDesc = video.snippet.description;
-    console.log("Inside VideoDetail sect: " + video);
+    console.log("Inside VideoDetail sect: " + JSON.stringify(video));
 
     return (
         <div className='video-detail col-md-8'>

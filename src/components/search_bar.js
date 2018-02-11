@@ -5,17 +5,23 @@ class SearchBar extends Component {
 
     constructor(props){
         super(props);
-        this.state = { term: '' };
+        this.state = { 
+            term: '' 
+        };
     }
 
-    onInputChange = (event) => {
-        this.setState({ term: event.target.value })
+    onInputChange = (term) => {
+        this.setState({term});
+        this.props.onSearchTermChange(term);
     }
 
     render() {
         return (
-            <div>
-                <input style={{ width: '50%'}} placeholder="search music" onChange={this.onInputChange}/>
+            <div className="search-bar">
+                <input 
+                style={{ width: '50%'}} 
+                placeholder="search music" 
+                onChange={(event) => this.onInputChange(event.target.value)}/>
             </div>
         )
     }

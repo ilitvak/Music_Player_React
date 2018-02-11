@@ -4,6 +4,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import _ from 'lodash';
 
 const API_KEY = 'AIzaSyDS3amG1tsaRp0VKo2a9yEfUPOe9Y7ExXs';
 const htmlContainer = document.querySelector('.container');
@@ -17,24 +18,26 @@ class App extends Component {
             selectedVideo: null
         };
 
-        YTSearch({key: API_KEY, term: 'house music'}, (videos) => {
+        this.videoSearch("post-malone");
+    }
+
+    videoSearch(term) {
+        YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({
                 videos: videos,
                 selectedVideo: videos[0]
             })
-            // this.setState({videos}) can also be written in es6 since both key and value have
-            // the same name || just syntactic sugar
-            console.log("The array of videos is: " + this.state.videos);
         });
     }
 
     render() {
+
+        const videoSearch = _.debounce( (term) => {this.videoSearch(term)}, 300 )
         return (
             <div>
-                <SearchBar />
+                <SearchBar onSearchTermChange={videoSearch} />
                 <VideoDetail video={this.state.selectedVideo}/>
-                <VideoList 
-                onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                <VideoList onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                 videos={this.state.videos} />
             </div>
         )
