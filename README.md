@@ -1,25 +1,46 @@
-# ReduxSimpleStarter
+Music_Player_React
+===========
+This Music Player utilizes React.js's library to create a functional youtube-like application using Youtube's API. Users may select a video from the side nav and it will load their video without any lag thanks to [lodash](https://lodash.com/). 
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+Built With
+----------
 
-### Getting Started
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
+* [JavaScript](http://javascript.com)
+* [React](https://reactjs.org/)
+* [BootstrapV4](https://v4-alpha.getbootstrap.com/)
+* [Lodash](https://lodash.com/)
 
-There are two methods for getting started with this repo.
+Configuration
+-------------
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
+Start by cloning this repository in your terminal
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
+1. $ git clone https://github.com/ilitvak/Music_Player_React.git.
+```
+```
+2. cd into the correct directory ... /Music_Player*
+```
+```
+3. npm install all the dependencies
+```
+```
+4. run npm start 
 ```
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Running the Application
+-----------------------
 
-```
-> npm install
-> npm start
-```
+Once you have followed the above steps your localhost:8080 should be running. If so, then navigate to an empty broswer window and type in - localhost:8080 which will bring you to the project. 
+
+Lodash
+-----------
+A modern JavaScript utility library delivering modularity, performance & extras. I used it specifically for the `debounce function` which is similar to a setTimeout.
+
+
+Screenshots
+-----------
+
+![Imgur](https://i.imgur.com/jUI6q2X.png)
+
